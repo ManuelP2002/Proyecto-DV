@@ -6,77 +6,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	private CharacterController ThisController = null;
-	private Transform ThisTransform = null;
-	public float RotateSpeed = 90f;
-	public float MaxSpeed = 50f;
-	public float JumpForce = 50f;
-	public float GroundedDist = 0.1f;
-	public bool IsGrounded = false;
-	private Vector3 Velocity = Vector3.zero;
-	public LayerMask GroundLayer;
-	public Animator ctrlAnims;
+	public float runSpeed = 7;
+	public float rotSpeed = 250;
 
-	// Use this for initialization
-	void Awake()
-	{
-		ThisController = GetComponent<CharacterController>();
-		ThisTransform = GetComponent<Transform>();
-		ctrlAnims = GetComponent<Animator>();
-	}
+	public Animator animator;
 
-	// Update is called once per frame
-	void FixedUpdate()
-	{
-		float Horz = Input.GetAxis("Horizontal");
-		float Vert = Input.GetAxis("Vertical");
-		ThisTransform.rotation *= Quaternion.Euler(new Vector3(0, RotateSpeed
-			* Time.deltaTime * Horz, 0));
-		//Calculate Move Dir
-		if ((Vert > 0) || (Vert < 0))
-		{
-			if (Input.GetMouseButton(0))
-			{
-				ctrlAnims.SetTrigger("Run");
-			}
-			ctrlAnims.SetFloat("Speed", Vert * Time.deltaTime);
-			Velocity.z = Vert * MaxSpeed * Time.deltaTime;
+	private float x, y;
 
-		}
-		//Are we grounded?
-		IsGrounded = (DistanceToGround() < GroundedDist) ? true : false;
-		//Should we jump?
-		if (Input.GetAxisRaw("Jump") != 0 && IsGrounded)
-		{
-			Velocity.y = JumpForce;
-		}
-		//Apply gravity
-		Velocity.y += Physics.gravity.y * Time.deltaTime;
+    void Update()
+    {
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
 
-		//Move
-		ThisController.Move(ThisTransform.TransformDirection(Velocity) *
-			Time.deltaTime);
+        transform.Rotate(0, x * Time.deltaTime * rotSpeed, 0);
 
-        if(Input.GetKeyDown(KeyCode.W))
-		{
-			ctrlAnims.SetBool("Andocaminandoconunflowviolento", true);
+        transform.Translate(0,0, y * Time.deltaTime * runSpeed);
 
-		}
-		else
-        {
-			ctrlAnims.SetBool("Andocaminandoconunflowviolento", false);
-		}
-	}
-
-	public float DistanceToGround()
-	{
-		RaycastHit hit;
-		float distanceToGround = 0;
-		if (Physics.Raycast(ThisTransform.position, -Vector3.up, out hit,
-			Mathf.Infinity, GroundLayer))
-			distanceToGround = hit.distance;
-		return distanceToGround;
-	}
-
-	
+        animator.SetFloat("Vx", x);
+        animator.SetFloat("Vy",y);
+    }
 }
