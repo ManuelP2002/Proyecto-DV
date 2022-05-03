@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 	public bool IsGrounded = false;
 	private Vector3 Velocity = Vector3.zero;
 	public LayerMask GroundLayer;
-	Animator ctrlAnims;
+	public Animator ctrlAnims;
 
 	// Use this for initialization
 	void Awake()
@@ -56,6 +56,16 @@ public class PlayerController : MonoBehaviour
 		//Move
 		ThisController.Move(ThisTransform.TransformDirection(Velocity) *
 			Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.W))
+		{
+			ctrlAnims.SetBool("Andocaminandoconunflowviolento", true);
+
+		}
+		else
+        {
+			ctrlAnims.SetBool("Andocaminandoconunflowviolento", false);
+		}
 	}
 
 	public float DistanceToGround()
@@ -67,4 +77,6 @@ public class PlayerController : MonoBehaviour
 			distanceToGround = hit.distance;
 		return distanceToGround;
 	}
+
+	
 }
