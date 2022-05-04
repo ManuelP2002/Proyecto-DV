@@ -472,7 +472,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1010039141}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1755,7 +1755,7 @@ MeshCollider:
   m_GameObject: {fileID: 914665872}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2059,8 +2059,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1912280865}
   - {fileID: 244647491}
+  - {fileID: 1912280865}
   m_Father: {fileID: 1201139659}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2254,6 +2254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1113010189}
   - component: {fileID: 1113010190}
+  - component: {fileID: 1113010191}
+  - component: {fileID: 1113010192}
   m_Layer: 0
   m_Name: spawnZone
   m_TagString: Untagged
@@ -2290,7 +2292,42 @@ MonoBehaviour:
   gemCurrency: {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
   xPos: 0
   zPos: 0
+  timer: 0
   gemCount: 0
+--- !u!114 &1113010191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113010188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18b5f7b6ae8ef94599cbf90e9afaaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potCurrency: {fileID: 168982, guid: 3c173e0a62259483f98b259a6685838f, type: 3}
+  xPos: 0
+  zPos: 0
+  timer: 0
+  potCount: 0
+--- !u!114 &1113010192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113010188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc33943fbf21bc42a7bdcce5b49595a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceBombCurrency: {fileID: 5135122723586841351, guid: b0f54cad00f246843b5e159c762a2f77, type: 3}
+  xPos: 0
+  zPos: 0
+  timer: 0
+  iceBombCount: 0
 --- !u!1 &1154614216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,8 +2856,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0594e19615519243a1f4b5b47bb8232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gemCurrency: {fileID: 1113010190}
+  potGen: {fileID: 1113010191}
+  ibGen: {fileID: 1113010192}
+  contadorGemas: {fileID: 1912280866}
+  contadorVida: {fileID: 1843074310}
+  contadorPociones: {fileID: 1998226045}
+  contadorIceBombs: {fileID: 622632198}
   runSpeed: 3
   rotSpeed: 180
+  contarDin: 0
+  contarPot: 0
+  contarIB: 0
   animator: {fileID: 1384923206}
 --- !u!136 &1384923209
 CapsuleCollider:
@@ -4658,7 +4705,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1010039141}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

@@ -5,25 +5,32 @@ using UnityEngine;
 public class GenerateCurrency : MonoBehaviour
 {
     public GameObject gemCurrency;
+
     public int xPos;
     public int zPos;
+    public float timer;
     public int gemCount;
     void Start()
     {
-        StartCoroutine(GemDrop());
+        timer = 3f;
     }
 
-    IEnumerator GemDrop()
+    void Update()
     {
-        while (gemCount < 12)
+        if (timer > 0f)
         {
-            xPos = Random.Range(-15, -6);
-            zPos = Random.Range(7, -7);
-            Instantiate(gemCurrency, new Vector3(xPos, 1, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(3.5f);
-            gemCount += 1;
+            timer = timer - Time.deltaTime;
+
         }
 
-
+         if (gemCount < 12 && timer <=0f)
+        {
+                xPos = Random.Range(-15, -6);
+                zPos = Random.Range(7, -7);
+                Instantiate(gemCurrency, new Vector3(xPos, 1, zPos), Quaternion.identity);
+                timer = 3f;
+                gemCount += 1;
+        }
+      
     }
 }
