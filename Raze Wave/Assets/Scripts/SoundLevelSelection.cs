@@ -8,6 +8,7 @@ public class SoundLevelSelection : MonoBehaviour
     public AudioSource SoundBtnPlay;
     public AudioSource SoundBtn;
     public int numscene;
+    public int numsceneAfter;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,10 @@ public class SoundLevelSelection : MonoBehaviour
     public void OptionBackClick1()
     {
         SceneManager.LoadScene(numscene);
+    }
+
+    public void OptionPlayClick1()
+    {
+        SceneManager.LoadScene(numsceneAfter);
     }
 }
