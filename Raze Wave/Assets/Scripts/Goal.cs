@@ -4,9 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Goal : MonoBehaviour
 {
-    public ItemController health , actHealth;
-    public EnemyController enemyDmg;
-    
+   
     void Start()
     {
 
@@ -23,8 +21,7 @@ public class Goal : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             Destroy(collision.gameObject);
-            health -= enemyDmg;
-            actHealth += health;
+            
         }
            
     }
