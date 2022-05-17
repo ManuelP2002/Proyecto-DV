@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2372346668fafdb49a138ce81e4f57ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7036151732271142032, guid: 10ebb25626145c848a6091fab71fd067, type: 3}
   hoverColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}

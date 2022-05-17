@@ -68,4 +68,10 @@ public class PlayerController : MonoBehaviour
             ibGen.iceBombCount -= 1;
         }
     }
+
+     public void Descontar(int valor)
+    {
+        contarDin -= valor;
+
+    }
 }

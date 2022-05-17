@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    public PlayerController player;
+    public GameObject player;
     public Color hoverColor;
     private GameObject turret;
     private Renderer rend;
     private Color startColor;
     bool turret1Press;
     bool turret2Press;
+
+    public GameObject turret1Prefab;
+    public GameObject turret2Prefab;
+
+
+    
+
+    private void Awake()
+    {
+       
+    }
     void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+      
     }
 
  
@@ -29,9 +40,18 @@ public class Node : MonoBehaviour
                 Debug.Log("No es posible construir");
                 return;
             }
-            GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-           turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+           
+           turret = (GameObject)Instantiate(turret, transform.position, transform.rotation);
 
+            if (turret1Press)
+            {
+                player.GetComponent<PlayerController>().Descontar(8);
+            }
+
+             if (turret2Press)
+             {
+                    player.GetComponent<PlayerController>().Descontar(15);
+             }
         }
     }
 
@@ -43,22 +63,12 @@ public class Node : MonoBehaviour
     {
         rend.material.color = startColor;
     }
-    public void OnTurret1Click()
+    public void OnTurret1Click(GameObject turretToBuild)
     {
-        if (player.contarDin >= 8)
+        if (player.GetComponent<PlayerController>().contarDin >= 8)
         {
             turret1Press = true;
-            player.contarDin -= 8;
-            BuildManager.instance.turretToBuild = BuildManager.instance.turret1Prefab;
-        }
-    }
-    public void OnTurret2Click()
-    {
-        if (player.contarDin >= 15)
-        {   
-            turret2Press = true;
-            player.contarDin -= 15;
-            BuildManager.instance.turretToBuild = BuildManager.instance.turret2Prefab;
+            turret = turretToBuild;
         }
     }
 }
