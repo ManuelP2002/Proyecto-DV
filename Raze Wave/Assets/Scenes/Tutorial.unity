@@ -1293,6 +1293,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c7f0950aa535ce4faef155ad244c136, type: 3}
+--- !u!1 &421687108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421687110}
+  - component: {fileID: 421687109}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &421687109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421687108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ab5f41c8e3ee841a26cc7beeb1f45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attactbot: {fileID: 8631465044646415651, guid: b00d186b688f3304f931a1829a6e53d5, type: 3}
+  spider: {fileID: 1537008473948126, guid: 5c7f0950aa535ce4faef155ad244c136, type: 3}
+  drone: {fileID: 2614241744216947712, guid: 5bd685975a63f0542b3ac964a6f0f778, type: 3}
+  enemyHP: 100
+  enemyDMG: 5
+--- !u!4 &421687110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421687108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1825542, y: 2.7657108, z: 1.0862217}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440978127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &440978128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2677,6 +2725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5d4e9c159c89346ab055782a863bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eMger: {fileID: 0}
+  pMger: {fileID: 8296172668171496019}
 --- !u!1 &694084752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,8 +2846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8296172668171496018}
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  turret1Prefab: {fileID: 0}
-  turret2Prefab: {fileID: 0}
+  turret1Prefab: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+  turret2Prefab: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
 --- !u!1 &808592589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,7 +2964,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836387900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8296172668171496019}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836387900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5517,8 +5579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8296172668171496018}
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  turret1Prefab: {fileID: 0}
-  turret2Prefab: {fileID: 0}
+  turret1Prefab: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+  turret2Prefab: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
 --- !u!1 &1619580266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6062,37 +6124,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2146406663}
+      - m_Target: {fileID: 2146406664}
         m_TargetAssemblyTypeName: Node, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: OnTurret1Click
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1589385888}
+      - m_Target: {fileID: 1589385889}
         m_TargetAssemblyTypeName: Node, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: OnTurret1Click
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1691189450}
         m_TargetAssemblyTypeName: Node, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: OnTurret1Click
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6226,8 +6288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8296172668171496018}
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  turret1Prefab: {fileID: 0}
-  turret2Prefab: {fileID: 0}
+  turret1Prefab: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+  turret2Prefab: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
 --- !u!1 &1700242535
 GameObject:
   m_ObjectHideFlags: 0
@@ -6585,7 +6647,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20/20
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a6320ea5a0db6c488db7a280d4805d3, type: 2}
   m_sharedMaterial: {fileID: -7675295382771067723, guid: 7a6320ea5a0db6c488db7a280d4805d3, type: 2}
@@ -8674,13 +8738,49 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 805325027}
+        m_TargetAssemblyTypeName: Node, Assembly-CSharp
+        m_MethodName: OnTurret2Click
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2146406664}
         m_TargetAssemblyTypeName: Node, Assembly-CSharp
         m_MethodName: OnTurret2Click
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1589385889}
+        m_TargetAssemblyTypeName: Node, Assembly-CSharp
+        m_MethodName: OnTurret2Click
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1691189450}
+        m_TargetAssemblyTypeName: Node, Assembly-CSharp
+        m_MethodName: OnTurret2Click
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8743,8 +8843,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8296172668171496018}
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  turret1Prefab: {fileID: 0}
-  turret2Prefab: {fileID: 0}
+  turret1Prefab: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+  turret2Prefab: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}
 --- !u!1001 &1334336175547088578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8901,6 +9001,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7036151732271142032, guid: 10ebb25626145c848a6091fab71fd067, type: 3}
   m_PrefabInstance: {fileID: 1334336175547088578}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8296172668171496019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334336176326426250, guid: 10ebb25626145c848a6091fab71fd067, type: 3}
+  m_PrefabInstance: {fileID: 1334336175547088578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172668171496018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0594e19615519243a1f4b5b47bb8232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8631465046308558478
 PrefabInstance:
   m_ObjectHideFlags: 0

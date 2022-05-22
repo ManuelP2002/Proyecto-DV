@@ -35,23 +35,20 @@ public class Node : MonoBehaviour
     {
         if (turret1Press == true || turret2Press ==true)
         {
-            if (turret != null)
-            {
-                Debug.Log("No es posible construir");
-                return;
-            }
-           
-           turret = (GameObject)Instantiate(turret, transform.position, transform.rotation);
 
             if (turret1Press)
             {
                 player.GetComponent<PlayerController>().Descontar(8);
+                turret = (GameObject)Instantiate(turret, transform.position, transform.rotation);
+                turret1Press = false;
             }
 
              if (turret2Press)
              {
-                    player.GetComponent<PlayerController>().Descontar(15);
-             }
+                player.GetComponent<PlayerController>().Descontar(15);
+                turret = (GameObject)Instantiate(turret, transform.position, transform.rotation);
+                turret2Press = false;
+            }
         }
     }
 
@@ -68,6 +65,16 @@ public class Node : MonoBehaviour
         if (player.GetComponent<PlayerController>().contarDin >= 8)
         {
             turret1Press = true;
+            turret = turretToBuild;
+            
+        }
+    }
+
+    public void OnTurret2Click(GameObject turretToBuild)
+    {
+        if (player.GetComponent<PlayerController>().contarDin >= 15)
+        {
+            turret2Press = true;
             turret = turretToBuild;
         }
     }

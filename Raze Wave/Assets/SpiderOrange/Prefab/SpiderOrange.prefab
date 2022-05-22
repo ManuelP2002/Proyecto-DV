@@ -473,10 +473,9 @@ GameObject:
   - component: {fileID: 95204184301125184}
   - component: {fileID: 2426434370467356449}
   - component: {fileID: -6677222456886604307}
-  - component: {fileID: 6898016481482106706}
   m_Layer: 0
   m_Name: SpiderOrange
-  m_TagString: Untagged
+  m_TagString: spiderBot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -545,22 +544,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6898016481482106706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537008473948126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2316814a2cf8ba4691fcd9bdf1cd991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 1537008473948126}
-  enemyName: T1-Spider
-  enemyDmg: 3
-  enemyHP: 50
 --- !u!1 &1545403800867726
 GameObject:
   m_ObjectHideFlags: 0

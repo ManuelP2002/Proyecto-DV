@@ -8,6 +8,9 @@ TagManager:
   - Health
   - Ice
   - Enemy
+  - spiderBot
+  - atBot
+  - droneBot
   layers:
   - Default
   - TransparentFX

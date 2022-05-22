@@ -110,3 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7036151732271142032, guid: 10ebb25626145c848a6091fab71fd067, type: 3}
   hoverColor: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
+  turret1Prefab: {fileID: 6485261358194866107, guid: 2fe3211c21dd6b94fa0210af0593706f, type: 3}
+  turret2Prefab: {fileID: 2325266824842898725, guid: 2cef2912188f401489dcdba7d32c1d75, type: 3}

@@ -19,14 +19,22 @@ public class PlayerController : MonoBehaviour
 	public float rotSpeed = 250;
     public int contarDin = 0;
     public int contarPot = 0;
-    public int contarIB = 0; 
+    public int contarIB = 0;
+    public int health = 20;
+    public int actHealth;
 	public Animator animator;
-
+    private GameObject atbot;
+    private GameObject drone;
+    private GameObject spider; 
 	private float x, y;
 
     private void Start()
     {
-        
+        contadorVida.text = health + "/20";
+
+        atbot = GameObject.FindGameObjectWithTag("atBot");
+        spider = GameObject.FindGameObjectWithTag("spiderBot");
+        drone = GameObject.FindGameObjectWithTag("droneBot");
     }
     void Update()
     {
@@ -73,5 +81,33 @@ public class PlayerController : MonoBehaviour
     {
         contarDin -= valor;
 
+    }
+
+     public void Heal()
+    {
+        if (contarPot > 0)
+        { 
+            if (actHealth < 20)
+            {
+                actHealth += 5;
+                contadorVida.text = actHealth + "/20";
+                contarPot -= 1;
+                contadorPociones.text = contarPot.ToString();
+                if (actHealth > health)
+                {
+                    actHealth = 20;
+                    contadorVida.text = actHealth + "/20";
+                }
+            }
+        }
+     }
+
+    public void Freeze()
+    {
+        if (contarIB > 0)
+        {
+
+
+        }
     }
 }
