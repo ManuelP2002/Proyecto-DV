@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: drone Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2614241744216947712, guid: 5bd685975a63f0542b3ac964a6f0f778, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3390216214679398074, guid: 5bd685975a63f0542b3ac964a6f0f778, type: 3}
       propertyPath: m_RootOrder
       value: 0

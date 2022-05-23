@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Goal : MonoBehaviour
 {
-    public EnemyManager eMger;
+    
     public PlayerController pMger;
     void Start()
     {
@@ -19,24 +19,14 @@ public class Goal : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("atBot"))
+       
+        if (collision.gameObject.tag.Equals("Enemy"))
         {
             Destroy(collision.gameObject);
-            pMger.actHealth = pMger.health - 8;
-            pMger.contadorVida.text = pMger.actHealth + "/20";
+            pMger.health -= 5;
+            pMger.contadorVida.text = pMger.health + "/20";
         }
-        if (collision.gameObject.tag.Equals("spiderBot"))
-        {
-            Destroy(collision.gameObject);
-            pMger.actHealth = pMger.health - 5;
-            pMger.contadorVida.text = pMger.actHealth + "/20";
-        }
-        if (collision.gameObject.tag.Equals("droneBot"))
-        {
-            Destroy(collision.gameObject);
-            pMger.actHealth = pMger.health - 3;
-            pMger.contadorVida.text = pMger.actHealth + "/20";
-        }
+       
     }
 
 }

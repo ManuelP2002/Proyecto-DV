@@ -188,12 +188,11 @@ GameObject:
   - component: {fileID: 1773448983694150935}
   - component: {fileID: 7117723782432026330}
   - component: {fileID: 7036377603015222192}
-  - component: {fileID: 1603344904618067614}
   - component: {fileID: 8405415866433213749}
   - component: {fileID: -5161081360801899204}
   m_Layer: 0
   m_Name: attackBot
-  m_TagString: atBot
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,23 +256,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1603344904618067614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5066300061472248640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31ab5f41c8e3ee841a26cc7beeb1f45b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attactbot: {fileID: 0}
-  spider: {fileID: 0}
-  drone: {fileID: 0}
-  enemyHP: 100
-  enemyDMG: 8
 --- !u!114 &8405415866433213749
 MonoBehaviour:
   m_ObjectHideFlags: 0

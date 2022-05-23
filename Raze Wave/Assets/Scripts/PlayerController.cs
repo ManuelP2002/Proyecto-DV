@@ -8,18 +8,16 @@ public class PlayerController : MonoBehaviour
 {
     public GenerateCurrency gemCurrency;
     public GeneratePotions potGen;
-    public GenerateIceB ibGen;
+    
 
     public TextMeshProUGUI contadorGemas;
     public TextMeshProUGUI contadorVida;
     public TextMeshProUGUI contadorPociones;
-    public TextMeshProUGUI contadorIceBombs;
 
     public float runSpeed = 7;
 	public float rotSpeed = 250;
     public int contarDin = 0;
     public int contarPot = 0;
-    public int contarIB = 0;
     public int health = 20;
     public int actHealth;
 	public Animator animator;
@@ -68,13 +66,6 @@ public class PlayerController : MonoBehaviour
             contadorPociones.text = contarPot.ToString();
             potGen.potCount -= 1;
         }
-         if(other.gameObject.tag.Equals("Ice"))
-        {
-            Destroy(other.gameObject);
-            contarIB += 1;
-            contadorIceBombs.text = contarIB.ToString();
-            ibGen.iceBombCount -= 1;
-        }
     }
 
      public void Descontar(int valor)
@@ -102,12 +93,5 @@ public class PlayerController : MonoBehaviour
         }
      }
 
-    public void Freeze()
-    {
-        if (contarIB > 0)
-        {
-
-
-        }
-    }
+    
 }
