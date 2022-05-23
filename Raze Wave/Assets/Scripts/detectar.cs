@@ -15,6 +15,7 @@ void Start(){
        switch(obj.tag){
 
              case "enemy":
+             
             tcRoot.toweHead.transform.LookAt(obj.transform);
             if(Time.time>timeNextBullet){
             Instantiate(tcRoot.bulletReference,tcRoot.bulletSpawn.position,tcRoot.bulletSpawn.rotation);

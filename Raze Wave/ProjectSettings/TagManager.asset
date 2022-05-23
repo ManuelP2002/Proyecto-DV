@@ -7,15 +7,17 @@ TagManager:
   - Gem
   - Health
   - Ice
-  - Enemy
   - spiderBot
   - atBot
   - droneBot
+  - enemy
+  - ground
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Target
   - Water
   - UI
   - 

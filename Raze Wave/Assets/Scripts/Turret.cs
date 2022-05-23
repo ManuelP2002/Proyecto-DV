@@ -15,7 +15,7 @@ public class Turret : MonoBehaviour
 
     void Start(){
 
-rangeAttackVisusal.GetComponent<SphereCollider>().radius=rangeAttack; 
+           rangeAttackVisusal.GetComponent<SphereCollider>().radius=rangeAttack; 
     }
 
 

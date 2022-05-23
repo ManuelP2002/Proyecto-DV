@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class Enemys : MonoBehaviour
 {
 
+public Rigidbody enemigo; 
+
+   
 
 
 public NavMeshAgent agent; 
@@ -19,5 +22,7 @@ public NavMeshAgent agent;
     void Update()
     {
         
+      
+
     }
 }

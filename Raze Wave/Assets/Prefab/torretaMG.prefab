@@ -80,7 +80,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 7544403735576212988}
   "ca\xF1on": {fileID: 4585157298697949096}
   bulletReference: {fileID: 5135122723586841351, guid: b0f54cad00f246843b5e159c762a2f77, type: 3}
-  fireRate: 1
+  fireRate: 0.5
   rangeAttackVisusal: {fileID: 8925054568189519234}
   rangeAttack: 5
 --- !u!1 &8925054568189519234
