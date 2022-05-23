@@ -78,16 +78,16 @@ public class PlayerController : MonoBehaviour
     {
         if (contarPot > 0)
         { 
-            if (actHealth < 20)
+            if (health < 20)
             {
-                actHealth += 5;
-                contadorVida.text = actHealth + "/20";
+                health += 5;
+                contadorVida.text = health + "/20";
                 contarPot -= 1;
                 contadorPociones.text = contarPot.ToString();
-                if (actHealth > health)
+                if (health > 20)
                 {
                     actHealth = 20;
-                    contadorVida.text = actHealth + "/20";
+                    contadorVida.text = health + "/20";
                 }
             }
         }
