@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public float runSpeed = 7;
 	public float rotSpeed = 250;
-    public int contarDin = 0;
+    public int contarDin = 8;
     public int contarPot = 0;
     public int health = 20;
     public int actHealth;

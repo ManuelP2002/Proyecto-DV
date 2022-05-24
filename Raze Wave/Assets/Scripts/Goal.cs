@@ -17,6 +17,7 @@ public class Goal : MonoBehaviour
         if (pMger.health < 0)
         {
             pMger.health = 0;
+            pMger.contadorVida.text = pMger.health + "/20";
         }
     }
 
