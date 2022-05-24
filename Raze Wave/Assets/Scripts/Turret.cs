@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public GameObject toweHead;
+    
     public Transform bulletSpawn; 
      public GameObject cañon ; 
      public GameObject bulletReference; 

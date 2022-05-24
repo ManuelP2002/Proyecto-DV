@@ -103,13 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12578ab1ffc6d504d8ad6b77c4df3971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toweHead: {fileID: 4303391667025923018}
   bulletSpawn: {fileID: 4413968963388062949}
   "ca\xF1on": {fileID: 3037116709288976375}
   bulletReference: {fileID: 5135122723586841351, guid: b0f54cad00f246843b5e159c762a2f77, type: 3}
   fireRate: 1
   rangeAttackVisusal: {fileID: 996757513797781960}
-  rangeAttack: 5
+  rangeAttack: 0.5
 --- !u!1 &4600676601393584063
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,11 +271,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8efddcd038968a149817370b2a97a0b8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}
---- !u!1 &4303391667025923018 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}
-  m_PrefabInstance: {fileID: 4303391667025956202}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4303391667025827818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b033c863a55c94b0faefde576ffd460a, type: 3}

@@ -14,7 +14,10 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (pMger.health < 0)
+        {
+            pMger.health = 0;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

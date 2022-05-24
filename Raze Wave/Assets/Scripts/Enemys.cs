@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemys : MonoBehaviour
 {
 
-
+    int enemyHP = 50;
 
 public NavMeshAgent agent; 
     // Start is called before the first frame update
@@ -18,6 +18,17 @@ public NavMeshAgent agent;
     // Update is called once per frame
     void Update()
     {
-        
+        if(enemyHP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("bullet"))
+        {
+            enemyHP -= 10;
+        }
     }
 }

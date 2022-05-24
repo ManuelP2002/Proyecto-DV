@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 7036377603015222192}
   - component: {fileID: 8405415866433213749}
   - component: {fileID: -5161081360801899204}
+  - component: {fileID: -1525948152166247352}
   m_Layer: 0
   m_Name: attackBot
   m_TagString: Enemy
@@ -285,6 +286,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-1525948152166247352
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066300061472248640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5455331033587024117
 GameObject:
   m_ObjectHideFlags: 0

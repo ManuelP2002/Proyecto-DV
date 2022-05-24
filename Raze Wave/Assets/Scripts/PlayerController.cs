@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Vx", x);
         animator.SetFloat("Vy",y);
+
+        if (contarDin < 0)
+        {
+            contarDin = 0;
+        }
     }
 
  
